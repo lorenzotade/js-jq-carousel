@@ -1,4 +1,20 @@
 $(function(){
+
+  // setto la lista delle immagini in una variabile
+  var imgList = $('.img-container img');
+  var circleList = $('.nav-circle i');
+
+  // con un ciclo for che gira tante volte
+  // quante sono le immagini presenti in html
+  // aggiungo cerchi dinamicamente di cui 
+  // il primo con classe active
+  for (var i = 0; i < imgList.length; i++) {
+    if (i == 0) {
+      $('.nav-circle').append('<i class="active fas fa-circle"></i>');
+    } else {
+      $('.nav-circle').append('<i class="fas fa-circle"></i>');
+    }
+  }
   
   // chiamo le due funzioni al click sui
   // due chevron/freccette
