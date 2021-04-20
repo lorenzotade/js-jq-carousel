@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* container e wrapper */
+.container {
+  height: 800px;
+  width: 80%;
+  margin: 80px auto;
+  padding: 30px;
+  text-align: center;
+  background-color: antiquewhite;
+  border-radius: 25px;
+}
+.container .wrapper {
+  width: 80%;
+  height: 500px;
+  margin: 30px auto;
+  position: relative;
+}
+
+/* chevrons */
+.container .wrapper .fa-chevron-left {
+  left: -30px;
+}
+.container .wrapper .fa-chevron-left,
+.container .wrapper .fa-chevron-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  cursor: pointer;
+}
+.container .wrapper .fa-chevron-right {
+  right: -30px;
+}
+
+/* img-container e img */
+.container .wrapper .img-container {
+  width: 80%;
+  margin: auto;
+  position: relative;
+}
+.container .wrapper .img-container img {
+  width: 100%;
+  margin: auto;
+  display: none;
+}
+.container .wrapper .img-container img.active {
+  display: block;
+}
+
+/* nav-circle e circle */
+.container .wrapper .nav-circle {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FFF;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.6);
+}
+.container .wrapper .nav-circle i {
+  margin: 0 10px;
+}
+.container .wrapper .nav-circle i.active {
+  color: #00F;
+}
