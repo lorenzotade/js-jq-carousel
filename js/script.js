@@ -2,20 +2,34 @@ $(function(){
 
   // setto la lista delle immagini in una variabile
   var imgList = $('.img-container img');
-  var circleList = $('.nav-circle i');
 
   // con un ciclo for che gira tante volte
   // quante sono le immagini presenti in html
   // aggiungo cerchi dinamicamente di cui 
   // il primo con classe active
-  for (var i = 0; i < imgList.length; i++) {
+  /* for (var i = 0; i < imgList.length; i++) {
     if (i == 0) {
       $('.nav-circle').append('<i class="active fas fa-circle"></i>');
     } else {
       $('.nav-circle').append('<i class="fas fa-circle"></i>');
     }
-  }
+  } */
   
+  // metodo con EACH, ON ed EQ
+  imgList.each(function(index){
+    var active = "";
+    if(index === 0) active = "active";
+    $('.nav-circle').append('<i class="fas fa-circle ' + active + '"></i>');
+  })
+
+  $('.nav-circle i').on('click', function(){
+    var index = $(this).index();
+    $('.nav-circle i.active').removeClass('active');
+    $('.img-container img.active').removeClass('active');
+    $('.img-container img').eq(index).addClass('active');
+    $(this).addClass('active');
+  })
+
   // chiamo le due funzioni al click sui
   // due chevron/freccette
   $('i.fa-chevron-right').click(nextImg);
